@@ -1,31 +1,35 @@
 import * as path from 'path';
 
-export const platform =
+export const platforms = [
+  'mac-10.14',
+  'linux-x86-64',
+  'windows-x64',
+  'windows-x86'
+];
+
+export const currentPlatform =
   process.platform === 'darwin'
-    ? 'mac-10.14'
+    ? platforms[0]
     : process.platform === 'linux'
-    ? 'linux-x86-64'
+    ? platforms[1]
     : process.platform === 'win32'
     ? process.arch === 'x64'
-      ? 'windows-x64'
-      : 'windows-x86'
+      ? platforms[2]
+      : platforms[3]
     : 'unsupported';
 
-export const PACKAGE_PATH = path.join(__dirname, '..', '..', '..');
+export const PACKAGE_PATH = path.join(__dirname, '..', '..');
 export const LIB_PATH = path.join(PACKAGE_PATH, 'lib');
 
-export function getBin(name: string, version: string = '1.0.3') {
+// tslint:disable-next-line: no-var-requires
+const packageJson = require(path.join(PACKAGE_PATH, 'package.json'));
+export const config = packageJson[packageJson.name];
+
+export function getBin(name: string) {
   return path.join(
     LIB_PATH,
-    `libwebp-${version}-${platform}`,
+    `libwebp-${config.libwebp.version}-${currentPlatform}`,
     'bin',
     process.platform === 'win32' ? `${name}.exe` : name
   );
 }
-
-// export function getDownloadUrls(version: string) {
-//   `//storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-${version}-windows-x86.zip`
-//   `//storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-${version}-windows-x64.zip`
-//   `//storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-${version}-linux-x86-64.tar.gz`
-//   `//storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-${version}-mac-10.14.tar.gz`
-// }

@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
-  "configurations": [{
+  "configurations": [
+    {
       "type": "node",
       "request": "launch",
       "name": "Debug Project",
@@ -10,7 +11,7 @@
       // automatically run the currently visible file with: "program": ${file}"
       "program": "${workspaceFolder}/src/cli/cli.ts",
       // "args": ["--no-install"],
-      "outFiles": ["${workspaceFolder}/build/main/**/*.js"],
+      "outFiles": ["${workspaceFolder}/build/**/*.js"],
       "skipFiles": [
         "<node_internals>/**/*.js",
         "${workspaceFolder}/node_modules/**/*.js"
@@ -35,5 +36,6 @@
       // "preLaunchTask": "npm: build",
       // "smartStep": true,
       "runtimeArgs": ["--nolazy"]
-    }]
+    }
+  ]
 }

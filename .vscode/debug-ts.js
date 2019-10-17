@@ -28,7 +28,7 @@ function getTSFile() {
  */
 function TS2JS(tsFile) {
   const srcFolder = path.join(__dirname, '..', 'src');
-  const distFolder = path.join(__dirname, '..', 'build', 'main');
+  const distFolder = path.join(__dirname, '..', 'build');
 
   const tsPathObj = path.parse(tsFile);
 
