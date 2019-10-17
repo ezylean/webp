@@ -72,7 +72,10 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="globals.html#lib_path" class="tsd-kind-icon">LIB_<wbr>PATH</a></li>
 								<li class="tsd-kind-variable"><a href="globals.html#package_path" class="tsd-kind-icon">PACKAGE_<wbr>PATH</a></li>
-								<li class="tsd-kind-variable"><a href="globals.html#platform" class="tsd-kind-icon">platform</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#config" class="tsd-kind-icon">config</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#currentplatform" class="tsd-kind-icon">current<wbr>Platform</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#packagejson" class="tsd-kind-icon">package<wbr>Json</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#platforms" class="tsd-kind-icon">platforms</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -96,27 +99,57 @@
 					<div class="tsd-signature tsd-kind-icon">LIB_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;path.join(PACKAGE_PATH, &#x27;lib&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/utils.ts:15</li>
+							<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/utils.ts#L22">lib/utils.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="package_path" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> PACKAGE_<wbr>PATH</h3>
-					<div class="tsd-signature tsd-kind-icon">PACKAGE_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;path.join(__dirname, &#x27;..&#x27;, &#x27;..&#x27;, &#x27;..&#x27;)</span></div>
+					<div class="tsd-signature tsd-kind-icon">PACKAGE_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;path.join(__dirname, &#x27;..&#x27;, &#x27;..&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/utils.ts:14</li>
+							<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/utils.ts#L21">lib/utils.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable">
-					<a name="platform" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> platform</h3>
-					<div class="tsd-signature tsd-kind-icon">platform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"mac-10.14"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"linux-x86-64"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"windows-x64"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"windows-x86"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"unsupported"</span><span class="tsd-signature-symbol"> =&nbsp;process.platform &#x3D;&#x3D;&#x3D; &#x27;darwin&#x27;? &#x27;mac-10.14&#x27;: process.platform &#x3D;&#x3D;&#x3D; &#x27;linux&#x27;? &#x27;linux-x86-64&#x27;: process.platform &#x3D;&#x3D;&#x3D; &#x27;win32&#x27;? process.arch &#x3D;&#x3D;&#x3D; &#x27;x64&#x27;? &#x27;windows-x64&#x27;: &#x27;windows-x86&#x27;: &#x27;unsupported&#x27;</span></div>
+					<a name="config" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;packageJson[packageJson.name]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/utils.ts:3</li>
+							<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/utils.ts#L26">lib/utils.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="currentplatform" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> current<wbr>Platform</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Platform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;process.platform &#x3D;&#x3D;&#x3D; &#x27;darwin&#x27;? platforms[0]: process.platform &#x3D;&#x3D;&#x3D; &#x27;linux&#x27;? platforms[1]: process.platform &#x3D;&#x3D;&#x3D; &#x27;win32&#x27;? process.arch &#x3D;&#x3D;&#x3D; &#x27;x64&#x27;? platforms[2]: platforms[3]: &#x27;unsupported&#x27;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/utils.ts#L10">lib/utils.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="packagejson" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> package<wbr>Json</h3>
+					<div class="tsd-signature tsd-kind-icon">package<wbr>Json<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(path.join(PACKAGE_PATH, &#x27;package.json&#x27;))</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/utils.ts#L25">lib/utils.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="platforms" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> platforms</h3>
+					<div class="tsd-signature tsd-kind-icon">platforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;mac-10.14&#x27;,&#x27;linux-x86-64&#x27;,&#x27;windows-x64&#x27;,&#x27;windows-x86&#x27;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/utils.ts#L3">lib/utils.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -133,7 +166,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/cwebp.ts:19</li>
+									<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/cwebp.ts#L19">lib/cwebp.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -188,7 +221,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/dwebp.ts:18</li>
+									<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/dwebp.ts#L18">lib/dwebp.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -242,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/execute.ts:16</li>
+									<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/execute.ts#L16">lib/execute.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -310,22 +343,19 @@
 					<a name="getbin" class="tsd-anchor"></a>
 					<h3>get<wbr>Bin</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Bin<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, version<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Bin<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/utils.ts:17</li>
+									<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/utils.ts#L28">lib/utils.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> version: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;1.0.3&quot;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -342,7 +372,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/gif2webp.ts:18</li>
+									<li>Defined in <a href="https://github.com/ezylean/webp/blob/be758a1/src/lib/gif2webp.ts#L18">lib/gif2webp.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,7 +435,16 @@
 						<a href="globals.html#package_path" class="tsd-kind-icon">PACKAGE_<wbr>PATH</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="globals.html#platform" class="tsd-kind-icon">platform</a>
+						<a href="globals.html#config" class="tsd-kind-icon">config</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#currentplatform" class="tsd-kind-icon">current<wbr>Platform</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#packagejson" class="tsd-kind-icon">package<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#platforms" class="tsd-kind-icon">platforms</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#cwebp" class="tsd-kind-icon">cwebp</a>
