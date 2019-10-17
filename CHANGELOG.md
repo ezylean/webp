@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com///compare/v1.0.4...v1.0.5) (2019-10-17)
+
+
+### Bug Fixes
+
+* **postinstall:** fix cleanup ([b6c0136](https://github.com///commit/b6c0136))
+
+
+
 ### [1.0.4](https://github.com///compare/v1.0.3...v1.0.4) (2019-10-17)
 
 
