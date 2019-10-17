@@ -1,10 +1,15 @@
 // tslint:disable: no-console
 import { mkdir } from 'fs';
+// @ts-ignore
 import request from 'request';
+// @ts-ignore
 import { extract as tarExtract } from 'tar';
+// @ts-ignore
 import { Extract as zipExtract } from 'unzipper';
 import { createGunzip } from 'zlib';
-import { config, LIB_PATH, platforms } from './lib/utils';
+import { config, LIB_PATH, platforms } from '../lib/utils';
+// needed to cpoy into build
+import './package.json';
 
 mkdir(LIB_PATH, e => {
   if (e) {

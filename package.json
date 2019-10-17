@@ -29,7 +29,7 @@
     "reset": "git clean -dfx && git reset --hard && npm i",
     "clean": "trash build test",
     "prepare-release": "run-s reset test cov:check doc:html version doc:publish",
-    "postinstall": "npm i request tar unzipper && node build/postinstall.js && npm remove request tar unzipper"
+    "postinstall": "cd build/postinstall && npm i && node index.js && npm uninstall request tar unzipper --save"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
@@ -60,15 +60,12 @@
     "nyc": "^14.1.1",
     "open-cli": "^5.0.0",
     "prettier": "^1.18.2",
-    "request": "^2.88.0",
     "standard-version": "^6.0.1",
-    "tar": "^5.0.5",
     "trash-cli": "^3.0.0",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.1",
-    "typescript": "^3.5.3",
-    "unzipper": "^0.10.5"
+    "typescript": "^3.5.3"
   },
   "@ezy/webp": {
     "libwebp": {

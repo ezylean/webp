@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "request": "^2.88.0",
+    "tar": "^5.0.5",
+    "unzipper": "^0.10.5"
+  }
+}
