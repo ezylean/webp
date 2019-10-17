@@ -1,0 +1,3 @@
+# @ezy/webp
+
+libwebp wrapper
