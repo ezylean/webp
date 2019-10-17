@@ -1,5 +1,6 @@
 src
 test
+test_images
 tsconfig.json
 tsconfig.module.json
 tslint.json
