@@ -1,6 +1,6 @@
 {
   "name": "@ezy/webp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "libwebp wrapper for nodejs",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
