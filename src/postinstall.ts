@@ -1,10 +1,11 @@
 // tslint:disable: no-console
-import { mkdir } from 'fs';
+import { mkdir, rmdir } from 'fs';
+import * as path from 'path';
 import request from 'request';
 import { extract as tarExtract } from 'tar';
 import { Extract as zipExtract } from 'unzipper';
 import { createGunzip } from 'zlib';
-import { config, LIB_PATH, platforms } from './lib/utils';
+import { config, LIB_PATH, PACKAGE_PATH, platforms } from './lib/utils';
 
 mkdir(LIB_PATH, e => {
   if (e) {
@@ -58,6 +59,14 @@ mkdir(LIB_PATH, e => {
         remaings--;
         if (remaings === 0) {
           console.log('done');
+          console.log('cleaning...');
+          rmdir(
+            path.join(PACKAGE_PATH, 'node_modules'),
+            { recursive: true },
+            err => {
+              err ? console.error(err) : console.log('OK');
+            }
+          );
         }
       });
     });
