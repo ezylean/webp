@@ -4,7 +4,7 @@
   "description": "libwebp wrapper for nodejs",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
-  "repository": "https://github.com/didierdemoniere/@ezy/webp",
+  "repository": "https://github.com/ezylean/webp",
   "license": "MIT",
   "keywords": [],
   "scripts": {
