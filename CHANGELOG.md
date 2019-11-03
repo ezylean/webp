@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/ezylean/webp/compare/v2.0.0...v2.0.1) (2019-11-03)
+
+
+### Build System
+
+* **.npmignore:** fix missing files due to bad pattern matching in .npmignore ([ed293fd](https://github.com/ezylean/webp/commit/ed293fd))
+
+
+
 ## [2.0.0](https://github.com/ezylean/webp/compare/v1.0.7...v2.0.0) (2019-11-03)
 
 
