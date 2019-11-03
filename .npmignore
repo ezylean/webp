@@ -1,6 +1,6 @@
 src
 test
-lib
+lib/**
 test_images
 tsconfig.json
 tsconfig.module.json
