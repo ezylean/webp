@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/ezylean/webp/compare/v1.0.7...v2.0.0) (2019-11-03)
+
+
+### refactor
+
+* **execute:** execute now handle a nodeCallback or return a promise ([70127a9](https://github.com/ezylean/webp/commit/70127a9))
+
+
+### BREAKING CHANGES
+
+* **execute:** execute function signature
+
+
+
 ### [1.0.7](https://github.com/ezylean/webp/compare/v1.0.6...v1.0.7) (2019-10-17)
 
 
