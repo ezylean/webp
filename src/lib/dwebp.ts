@@ -16,13 +16,5 @@ import { execute } from './execute';
  * @param options https://developers.google.com/speed/webp/docs/dwebp
  */
 export function dwebp(input: string, output: string, ...options: string[]) {
-  return new Promise((resolve, reject) => {
-    execute(
-      'dwebp',
-      options.concat(['-o', output, '--', input]),
-      (error, stdout) => {
-        error ? reject(error) : resolve(stdout);
-      }
-    );
-  });
+  return execute('dwebp', options.concat(['-o', output, '--', input]));
 }

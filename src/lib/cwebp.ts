@@ -17,13 +17,5 @@ import { execute } from './execute';
  * @param options https://developers.google.com/speed/webp/docs/cwebp
  */
 export function cwebp(input: string, output: string, ...options: string[]) {
-  return new Promise<string>((resolve, reject) => {
-    execute(
-      'cwebp',
-      options.concat(['-o', output, '--', input]),
-      (error, stdout) => {
-        error ? reject(error) : resolve(stdout);
-      }
-    );
-  });
+  return execute('cwebp', options.concat(['-o', output, '--', input]));
 }
